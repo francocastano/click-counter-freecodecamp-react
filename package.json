@@ -1,5 +1,6 @@
 {
   "name": "click-counter",
+  "homepage": "https://francocastano.github.io/click-counter-freecodecamp-react",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
