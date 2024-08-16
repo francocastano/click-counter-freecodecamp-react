@@ -1,23 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import './index.css';
+import './App.css'
+import Button from './components/Button';
+import Counter from './components/Counter';
+import freeCodeCampLogo from './img/freecodecamp-logo.png';
+import { useState } from 'react';
 
 function App() {
+
+  const [numClics, setNumClics] = useState(0);
+
+  const driveClic = () => {
+    setNumClics(numClics + 1);
+  };
+
+  const restartCounter = () => {
+    setNumClics(0)
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="freecodecamp-container-logo">
+        <img src={freeCodeCampLogo} alt="" className="freecodecamp-logo" />
+      </div>
+      <div className="principal-container">
+        <Counter numClics={numClics}/>
+        <Button
+          text='Click'
+          isClickButton={true}
+          clickDrive={driveClic} />
+        <Button
+          text='Restart'
+          isClickButton={false}
+          clickDrive={restartCounter} />
+      </div>
     </div>
   );
 }
